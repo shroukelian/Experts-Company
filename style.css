@@ -1410,9 +1410,8 @@ footer a:hover {
 }
 /* Blog Page Specific Styles */
 #blog-header {
-    /* لإعطاء خلفية فاتحة ومميزة لقسم العنوان */
     background-color: #f1f5f8; 
-    padding: 80px 0 40px 0; /* تباعد مختلف عن الأقسام العادية */
+    padding: 80px 0 40px 0; 
 }
 #blog-header h1 {
     color: #004a99;
@@ -1424,7 +1423,7 @@ footer a:hover {
 }
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 3 أعمدة أو حسب التباعد */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin-top: 40px;
 }
@@ -1522,7 +1521,7 @@ footer a:hover {
 /* Responsive Styles for Blog */
 @media (max-width: 992px) {
     .posts-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* عمودين في الشاشات اللوحية */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
         gap: 30px;
     }
     .post-image {
@@ -1535,7 +1534,7 @@ footer a:hover {
 
 @media (max-width: 576px) {
     .posts-grid {
-        grid-template-columns: 1fr; /* عمود واحد في شاشات الموبايل */
+        grid-template-columns: 1fr; 
         gap: 25px;
     }
     .post-image {
@@ -1550,4 +1549,114 @@ footer a:hover {
     #blog-header h1 {
         font-size: 2.5em;
     }
+}
+
+/* Article Page Styles */
+.article-header-wrapper {
+    /* light-bg لتوفير خلفية فاتحة تشبه الإطار الأبيض */
+    margin-top: 0; /* تأكد من عدم وجود هامش علوي يسبب فراغاً تحت الهيدر */
+}
+.article-header-wrapper .container {
+    padding: 0 25px; /* نفس البادينغ الأفقي */
+}
+.article-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0; /* تعديل البادينغ العلوي حسب الحاجة */
+    text-align: right;
+}
+.article-content h2, .article-content h3 {
+    color: #004a99;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.article-content h3 {
+    font-size: 1.8em;
+}
+.article-content p {
+    font-size: 1.15em;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 25px;
+}
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.article-meta {
+    /* التنسيق الحالي لبطاقة العنوان */
+    text-align: center;
+    margin-bottom: 40px; /* هذا الهامش سيتم وضعه في أسفل البطاقة (العنصر نفسه) */
+    padding: 20px;
+    background-color: white; /* يجب أن تكون بيضاء */
+    border-radius: 8px;
+    border-bottom: 2px solid #28a745;
+    
+    /* تأكيد عدم التثبيت */
+    position: relative; /* تأكيد أن وضعها طبيعي */
+    z-index: 10; /* تأكد من أنها فوق باقي العناصر لكن تحت الهيدر المثبت */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* إضافة ظل بسيط */
+}
+.article-meta span {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1em;
+    color: #555;
+}
+.article-meta i {
+    color: #28a745;
+    margin-left: 8px;
+}
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+.article-list li {
+    font-size: 1.15em;
+    color: #333;
+    margin-bottom: 15px;
+    padding-right: 30px;
+    position: relative;
+    line-height: 1.8;
+}
+.article-list li::before {
+    content: "\f058"; /* Font Awesome check-circle icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #28a745;
+    position: absolute;
+    right: 0;
+    font-size: 1.2em;
+}
+/* تنسيقات متجاوبة لصفحة المقال */
+@media (max-width: 768px) {
+    .article-content {
+        padding: 20px;
+    }
+    .article-content h2 {
+        font-size: 1.8em;
+    }
+    .article-content h3 {
+        font-size: 1.5em;
+    }
+    .article-content p, .article-list li {
+        font-size: 1em;
+    }
+    .article-meta h1 {
+    /* **تقليل حجم العنوان الرئيسي جداً في الموبايل** */
+    font-size: 18px !important; /* تقليل الحجم ليتناسب مع شاشة الموبايل */
+    line-height: 1.2 !important; /* تحسين تباعد الأسطر */
+    margin-bottom: 25px !important; /* تأكد من وجود مسافة بعد العنوان */
+}
+
+.article-meta span {
+    /* **جعل بيانات النشر تظهر بشكل عمودي ومتسق** */
+    display: block; /* جعل كل عنصر span يأخذ سطرًا جديدًا */
+    margin: 5px 0 !important; /* تقليل المسافة الأفقية وزيادة المسافة العمودية */
+    font-size: 0.95em !important;
+}
 }

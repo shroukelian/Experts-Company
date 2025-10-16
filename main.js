@@ -1,10 +1,8 @@
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// JavaScript لفتح وإغلاق الأسئلة الشائعة (Accordion)
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
         const faqItem = button.parentElement;
-        faqItem.classList.toggle('active'); // تبديل فئة Active
+        faqItem.classList.toggle('active'); 
         const answer = button.nextElementSibling;
         if (faqItem.classList.contains('active')) {
             answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -23,7 +21,6 @@ hamburgerBtn.addEventListener('click', () => {
     hamburgerBtn.classList.toggle('active');
 });
 
-// إغلاق قائمة الهامبرغر عند تغيير حجم الشاشة من موبايل إلى ديسكتوب
 window.addEventListener('resize', () => {
     if (window.innerWidth > 992) {
         if (mainNavWrapper.classList.contains('active')) {
@@ -33,13 +30,10 @@ window.addEventListener('resize', () => {
     }
 });
 
-// JavaScript بسيط للتمرير الناعم (Smooth Scroll) - تم تعديل هذا الجزء
-// يستهدف الآن كل من روابط القائمة وأزرار الـ btn و btn-secondary التي تبدأ بـ #
 document.querySelectorAll('a[href^="#"].btn, a[href^="#"].btn-secondary, nav ul li a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        // إغلاق قائمة الهامبرغر إذا كانت مفتوحة
         if (mainNavWrapper.classList.contains('active')) {
             mainNavWrapper.classList.remove('active');
             hamburgerBtn.classList.remove('active');
@@ -49,13 +43,11 @@ document.querySelectorAll('a[href^="#"].btn, a[href^="#"].btn-secondary, nav ul 
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-            // استخدام scrollIntoView للتمرير الناعم
             targetElement.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start' // يبدأ التمرير من أعلى العنصر المستهدف
+                block: 'start' 
             });
 
-            // لتعديل الـ URL بدون القفز المفاجئ (اختياري)
             if (history.pushState) {
                 history.pushState(null, null, targetId);
             } else {
