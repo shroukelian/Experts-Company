@@ -1410,3 +1410,146 @@ footer a:hover {
         padding: 8px 15px;
     }
 }
+/* Blog Page Specific Styles */
+#blog-header {
+    /* لإعطاء خلفية فاتحة ومميزة لقسم العنوان */
+    background-color: #f1f5f8; 
+    padding: 80px 0 40px 0; /* تباعد مختلف عن الأقسام العادية */
+}
+#blog-header h1 {
+    color: #004a99;
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+#blog-posts {
+    padding: 80px 0;
+}
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 3 أعمدة أو حسب التباعد */
+    gap: 40px;
+    margin-top: 40px;
+}
+.post-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+.post-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.post-content {
+    padding: 25px;
+}
+.post-content h3 {
+    font-size: 1.6em;
+    color: #004a99;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+.post-content p {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.post-date {
+    display: block;
+    color: #28a745;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.post-date i {
+    margin-left: 8px;
+}
+.read-more-btn {
+    display: inline-block;
+    color: #007bff;
+    font-weight: 700;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+.read-more-btn:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+.read-more-btn i {
+    margin-right: 5px;
+    transition: margin-right 0.3s ease;
+}
+.read-more-btn:hover i {
+    margin-right: 0;
+}
+
+/* Pagination Styles */
+.pagination {
+    text-align: center;
+    margin-top: 60px;
+}
+.pagination a {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.pagination a:hover {
+    background-color: #f0f0f0;
+    border-color: #007bff;
+}
+.pagination .active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.pagination .active:hover {
+    background-color: #0056b3;
+}
+.pagination a i {
+    margin-right: 5px;
+}
+
+/* Responsive Styles for Blog */
+@media (max-width: 992px) {
+    .posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* عمودين في الشاشات اللوحية */
+        gap: 30px;
+    }
+    .post-image {
+        height: 200px;
+    }
+    .post-content h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 576px) {
+    .posts-grid {
+        grid-template-columns: 1fr; /* عمود واحد في شاشات الموبايل */
+        gap: 25px;
+    }
+    .post-image {
+        height: 180px;
+    }
+    .post-content {
+        padding: 20px;
+    }
+    .post-content h3 {
+        font-size: 1.4em;
+    }
+    #blog-header h1 {
+        font-size: 2.5em;
+    }
+}
