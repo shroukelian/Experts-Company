@@ -910,7 +910,7 @@ footer a:hover {
         /* display: flex; لا تحتاج لتكرارها */
     }
     
-    /* لضمان أن الروابط داخل القائمة مكدسة عموديًا في الموبايل */
+    /* لضمان أن الروابط داخل القائمة مكدسة عمودياً في الموبايل */
     nav ul {
         flex-direction: column;
         width: 100%;
@@ -1660,3 +1660,50 @@ footer a:hover {
     font-size: 0.95em !important;
 }
 }
+/* New Fixed Contact Buttons Styles */
+.fixed-contact-buttons {
+    position: fixed;
+    bottom: 30px; /* Distance from the bottom */
+    left: 30px; /* Distance from the left (opposite of scrollbar in RTL) */
+    z-index: 1001; /* Ensure they are above other elements like the header */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+.floating-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Button size */
+    height: 60px; /* Button size */
+    border-radius: 50%; /* Make them circular */
+    color: white;
+    font-size: 1.8em; /* Icon size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) translateY(-3px); /* Scale up and lift slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.whatsapp-btn {
+    background-color: #25d366; /* WhatsApp green */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+.phone-btn {
+    background-color: #007bff; /* Primary blue color */
+}
+
+.phone-btn:hover {
+    background-color: #0056b3;
+}
+/* End Fixed Contact Buttons Styles */
